@@ -1,0 +1,84 @@
+* Windows API Examples in Modern C++ managed by single CMake Project.
+
+ *Outline*
+
+This repository contains many Windows API examples in modern C++ managed by CMake. 
+
+ + Note: It can be imported from Visual Studio, CLion or any other IDE
+   with CMake support.
+
+ *Build all codes from command line without any IDE:*
+
+ + Note: It assumes that Visual Studio community edition MSVC-2017
+   development tools are installed in the current machine.
+
+Just double click or run the file [[file:cmake-build.bat]] or run the
+following command. It will build all targets, all examples and install
+to {PROJECT DIRECTORY}./bin. The examples can be testd by clicking at
+the executables in ./bin or invoking them from command line.
+
+Or run the command: 
+
+#+BEGIN_SRC sh 
+  $ cmake_build.bat 
+  
+
+   Automate CMake initialization.
+   Building project 
+   Setting up project
+   --------------------------------------------------
+   -- The C compiler identification is MSVC 19.16.27025.1
+   -- The CXX compiler identification is MSVC 19.16.27025.1
+   -- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x64/cl.exe
+   -- Check for working C compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x64/cl.exe -- works
+   -- Detecting C compiler ABI info
+   -- Detecting C compiler ABI info - done
+   -- Detecting C compile features
+   -- Detecting C compile features - done
+   -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x64/cl.exe
+   -- Check for working CXX compiler: C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.16.27023/bin/Hostx86/x64/cl.exe -- works
+   -- Detecting CXX compiler ABI info
+   -- Detecting CXX compiler ABI info - done
+   -- Detecting CXX compile features
+   -- Detecting CXX compile features - done
+    [INFO] 64 bits build.
+   -- Configuring done
+   -- Generating done
+   -- Build files have been written to: C:/Users/archbox/Desktop/winapi-cmake/build2
+   Executing Install Target
+   --------------------------------------------------
+
+    ... ... ... ..  ... ... ... ..  ... ... ... ..  ... ... ... .. 
+
+   Done Building Project "C:\Users\archbox\Desktop\winapi-cmake\build2\install.vcxproj" (default targets).
+
+   Build succeeded.
+
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\install.vcxproj" (default target) (1) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\ALL_BUILD.vcxproj" (default target) (3) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\base64.vcxproj" (default target) (4) ->
+   (ClCompile target) -> 
+     C:\Users\archbox\Desktop\winapi-cmake\src\base64.cpp(47): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\base64.vcxproj]
+     C:\Users\archbox\Desktop\winapi-cmake\src\base64.cpp(49): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\base64.vcxproj]
+     C:\Users\archbox\Desktop\winapi-cmake\src\base64.cpp(58): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\base64.vcxproj]
+     C:\Users\archbox\Desktop\winapi-cmake\src\base64.cpp(61): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\base64.vcxproj]
+
+
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\install.vcxproj" (default target) (1) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\ALL_BUILD.vcxproj" (default target) (3) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\guiBasic1.vcxproj" (default target) (5) ->
+     C:\Users\archbox\Desktop\winapi-cmake\src\guiBasic1.cpp(167): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\guiBasic1.vcxproj]
+
+
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\install.vcxproj" (default target) (1) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\ALL_BUILD.vcxproj" (default target) (3) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\guiBasicNOWinmain.vcxproj" (default target) (6) ->
+     C:\Users\archbox\Desktop\winapi-cmake\src\guiBasicNOWinmain.cpp(126): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data [C:\Users\archbox\Desktop\winapi-cmake\build2\guiBasicNOWinmain.vcxproj]
+
+
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\install.vcxproj" (default target) (1) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\ALL_BUILD.vcxproj" (default target) (3) ->
+   "C:\Users\archbox\Desktop\winapi-cmake\build2\winver.vcxproj" (default target) (8) ->
+     C:\Users\archbox\Desktop\winapi-cmake\src\windowsVersion.cpp(30): warning C4996: 'GetVersionExA': was declared deprecated [C:\Users\archbox\Desktop\winapi-cmake\build2\winver.vcxproj]
+
+#+END_SRC
