@@ -82,3 +82,20 @@ Or run the command:
      C:\Users\archbox\Desktop\winapi-cmake\src\windowsVersion.cpp(30): warning C4996: 'GetVersionExA': was declared deprecated [C:\Users\archbox\Desktop\winapi-cmake\build2\winver.vcxproj]
 
 #+END_SRC
+
+Compilation Results: 
+
+#+BEGIN_SRC sh 
+  $ tree /f bin
+
+  Folder PATH listing
+  Volume serial number is 00000244 CEFD:3D70
+  C:\USERS\ARCHBOX\DESKTOP\WINAPI-CMAKE\BIN
+      base64.exe
+      guiBasic1.exe
+      guiBasicNOWinmain.exe
+      winhttp.exe
+      winver.exe
+
+  No subfolders exist
+#+END_SRC
