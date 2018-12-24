@@ -93,8 +93,6 @@ int main(int argc, char** argv) {
 }
 // ------------ End of Main ------------------------- //
 
-
-
 // Window Procedure - Process window messages or events 
 LRESULT windowProcedure(
 	HWND   hwnd    // Window Handle (Window object)
