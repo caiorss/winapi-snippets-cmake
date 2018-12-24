@@ -1,0 +1,13 @@
+*.exe
+*.bin
+*.so     
+*.obj
+*.dll
+*.tar.gz
+*.zip
+*.tgz
+*~
+~*
+*#
+*#                                    
+.vs/*
