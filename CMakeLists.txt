@@ -16,10 +16,15 @@ else()
 endif()
 
 
-# ===>>>> TARGET base64: Windows API base 64 facilities    
+# ===>>>> TARGET winver: Windows API base 64 facilities    
 # Sample application that shows current Windows installation version.
 #--------------------------------------------------------------
 add_executable(winver src/windowsVersion.cpp)
+
+# ===>>>> TARGET wihttp: Http download and requests with Winapis urlmon.dll and wininet.dll 
+# Sample application that shows current Windows installation version.
+#--------------------------------------------------------------
+add_executable(winhttp src/winhttp.cpp)
 
 
 # ===>>>> TARGET base64: Windows API base 64 facilities    
@@ -49,6 +54,7 @@ endif()
 
 # Copy targets to ./ - Directory where is this file CMakeLists.txt (project top level dir)
 install(TARGETS winver 
+				winhttp 
 				base64 
 				guiBasic1 
 				guiBasicNOWinmain 
