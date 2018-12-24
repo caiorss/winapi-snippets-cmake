@@ -27,7 +27,11 @@ add_executable(guiBasic1 WIN32 src/guiBasic1.cpp)
 
 add_executable(guiBasicNOWinmain WIN32 src/guiBasicNOWinmain.cpp)
 # target_link_libraries(guiBasicNOWinmain user32 gdi32)
-set_target_properties(guiBasicNOWinmain PROPERTIES LINK_FLAGS "/entry:mainCRTStartup")
+if(MSVC)
+	set_target_properties(guiBasicNOWinmain PROPERTIES LINK_FLAGS "/entry:mainCRTStartup")
+else()
+	 message(FATAL_ERROR " [ERROR] Linker flags of target guiBasicNOWinmain not set for this compiler")
+endif()
 
 #==========>>> Helper Targets <<<====================#
 
