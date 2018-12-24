@@ -15,6 +15,13 @@ else()
    message(" [INFO] 32 bits build.")
 endif()
 
+
+# ===>>>> TARGET base64: Windows API base 64 facilities    
+# Sample application that shows current Windows installation version.
+#--------------------------------------------------------------
+add_executable(winver src/windowsVersion.cpp)
+
+
 # ===>>>> TARGET base64: Windows API base 64 facilities    
 # Uses: Wincrypt API  crypt32.dll 
 #--------------------------------------------------------------
@@ -41,7 +48,8 @@ endif()
 #==========>>> Helper Targets <<<====================#
 
 # Copy targets to ./ - Directory where is this file CMakeLists.txt (project top level dir)
-install(TARGETS base64 
+install(TARGETS winver 
+				base64 
 				guiBasic1 
 				guiBasicNOWinmain 
 		DESTINATION ${CMAKE_CURRENT_LIST_DIR}/bin)
