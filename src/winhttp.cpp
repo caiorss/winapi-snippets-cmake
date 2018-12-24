@@ -17,6 +17,7 @@
 #pragma comment(lib, "wininet.lib")
 
 auto launchedFromConsole() -> bool;
+auto ExitPrompt() -> void;
 
 // Simple C++ wrapper for the function: URLDownloadToFileA
 HRESULT downloadFile(std::string url, std::string file);
@@ -48,18 +49,35 @@ int main() {
 	std::cout << " ========== HTTP Request test ====" << std::endl;
 	testHTTPRequest();
 
-	if (!launchedFromConsole()) {
-		std::cout << "\n *** Type RETURN to exit ***" << std::endl;
-		std::cin.get();
-	}
-	return 0;
-}
+	ExitPrompt();
 
-auto launchedFromConsole() -> bool {
+	return 0;
+} //================== End of main() =============================//
+
+/** Returns true if program was launched by invoking it from command line console 
+  * Returns false if program was launched by clicking on it.
+  * Aka: prompt = shell = terminal = console. 
+  *===============================================================================*/
+auto launchedFromConsole() -> bool 
+{
 	DWORD procIDs[2];
 	DWORD maxCount = 2;
 	DWORD result = GetConsoleProcessList((LPDWORD)procIDs, maxCount);
 	return result != 1;
+}
+
+/** Ask question 'Type RETURN to exit' if program was launched by clicking on it.
+  * Note: It is only useful for console programs. If the underlying application 
+  * was launched from cmd.exe or any other terminal (aka console), do nothing.
+  ******************************************************************************* */
+auto ExitPrompt() -> void 
+{
+	DWORD procIDs[2];
+	DWORD maxCount = 2;
+	DWORD result = GetConsoleProcessList((LPDWORD)procIDs, maxCount);
+	if (result != 1) return;
+	std::cout << "\n *** Type RETURN to exit ***" << std::endl;
+	std::cin.get();
 }
 
 HRESULT downloadFile(std::string url, std::string file) {
