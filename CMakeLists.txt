@@ -9,6 +9,12 @@ project(Windows_API_Experiments)
 # Set C++ 14 Standard
 set(CMAKE_CXX_STANDARD 17)
 
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+   message(" [INFO] 64 bits build.")
+else()
+   message(" [INFO] 32 bits build.")
+endif()
+
 # ===>>>> TARGET base64: Windows API base 64 facilities    
 # Uses: Wincrypt API  crypt32.dll 
 #--------------------------------------------------------------
@@ -23,7 +29,6 @@ target_link_libraries(base64 PUBLIC crypt32)
 #---------------------------------------------------------------
 add_executable(guiBasic1 WIN32 src/guiBasic1.cpp)
 # target_link_libraries(guiBasic1 user32 gdi32)
-
 
 add_executable(guiBasicNOWinmain WIN32 src/guiBasicNOWinmain.cpp)
 # target_link_libraries(guiBasicNOWinmain user32 gdi32)
