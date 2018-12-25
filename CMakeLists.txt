@@ -42,7 +42,12 @@ target_link_libraries(base64 PUBLIC crypt32)
 add_executable(guiBasic1 WIN32 src/guiBasic1.cpp)
 # target_link_libraries(guiBasic1 user32 gdi32)
 
-add_executable(guiBasicNOWinmain WIN32 src/guiBasicNOWinmain.cpp)
+
+# ====>>>> TARGET: guiBasicNOWinmain - Minimal graphical user interface - WinMain entry point, 
+# Add icon to executable. 
+# icon.rc => Resource script which is compiled by the resource compiler.
+#--------------------------------------------------------------
+add_executable(guiBasicNOWinmain WIN32 src/guiBasicNOWinmain.cpp src/icon.rc)
 # target_link_libraries(guiBasicNOWinmain user32 gdi32)
 if(MSVC)
 	set_target_properties(guiBasicNOWinmain PROPERTIES LINK_FLAGS "/entry:mainCRTStartup")
